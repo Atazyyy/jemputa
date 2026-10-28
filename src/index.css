@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Tema gelap charcoal + aksen lime */
+  --color-canvas: #10120e;
+  --color-canvas2: #171a14;
+  --color-card: #1c2018;
+  --color-card2: #242a20;
+  --color-edge: #2f362b;
+  --color-ink: #eef3e5;
+  --color-mute: #9aa390;
+  --color-lime: #b6f24a;
+  --color-lime-deep: #93cb23;
+  --color-lime-ink: #1a2206;
+  --color-lime-soft: #26320f;
+  --color-gold: #f2c14e;
+  --color-danger: #ef8a78;
+  --color-danger-soft: #38201a;
+  --color-sky: #8cc8ec;
+  --color-river: #3b4a53;
+  --color-road: #262b22;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-canvas);
+}
+
+::selection {
+  background-color: var(--color-lime);
+  color: var(--color-lime-ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: #3a4234;
+  border-radius: 8px;
+}
+
+/* Animasi garis rute bergerak di peta SVG (dasharray 2.6 2 → periode 4.6) */
+@keyframes route-dash-move {
+  to {
+    stroke-dashoffset: -9.2;
+  }
+}
+.route-dash {
+  animation: route-dash-move 1.1s linear infinite;
+}
